@@ -11,10 +11,11 @@
 
 | 内容 | 文件或目录 |
 |---|---|
-| CPU 最终技术方案 | [`docs/8位多寄存器自定义指令集_CPU技术方案_final(1).md`](docs/8位多寄存器自定义指令集_CPU技术方案_final(1).md) |
-| CPU 分阶段实现指南 | [`docs/8位CPU分阶段实现指南.md`](docs/8位CPU分阶段实现指南.md) |
+| CPU 最终技术方案 | [`docs/cpu-technical-spec.md`](docs/cpu-technical-spec.md) |
+| CPU 分阶段实现指南 | [`docs/cpu-implementation-guide.md`](docs/cpu-implementation-guide.md) |
 | Multisim 工程 | [`circuit/`](circuit/) |
-| 项目截图 | [`screenshots/`](screenshots/) |
+| 基础电路截图 | [`screenshots/base-system/`](screenshots/base-system/) |
+| ACC 初版截图 | [`screenshots/acc-prototype/`](screenshots/acc-prototype/) |
 
 ## 一、项目目标
 
@@ -223,14 +224,25 @@ CPU 整体仿真方案由小组协作完成，本人重点承担 ACC＋ALU 实�
 
 ## 十、仓库结构
 
-当前仓库主要包含：
-
 ```text
 multisim-course-design/
 ├── README.md
-├── circuit/                 # Multisim 仿真工程
-├── docs/                    # 技术方案与实现指南
-└── screenshots/             # 仿真和电路截图
+├── circuit/
+│   ├── alu-module.ms14
+│   ├── design-prototype.ms14
+│   ├── module-test.ms14
+│   └── system-top-v1-20260606.ms14
+├── docs/
+│   ├── cpu-technical-spec.md
+│   └── cpu-implementation-guide.md
+└── screenshots/
+    ├── base-system/
+    │   ├── acc-module.png
+    │   ├── alu-module.png
+    │   ├── decoder-module.png
+    │   └── system-top.png
+    └── acc-prototype/
+        └── acc.png
 ```
 
 后续可继续补充：
@@ -245,7 +257,16 @@ photos/
 reports/
 ```
 
-## 十一、使用的软件
+## 十一、命名规范
+
+- 文件名统一使用英文小写；
+- 多个单词使用连字符 `-` 分隔；
+- Multisim 工程保留 `.ms14` 扩展名；
+- 截图保留 `.png` 扩展名；
+- 版本和日期放在文件名末尾，例如 `system-top-v1-20260606.ms14`；
+- 不再使用 `Design1`、`test`、`final(1)`、`第一次` 等含义不明确的名称。
+
+## 十二、使用的软件
 
 - NI Multisim
 - 嘉立创 EDA
@@ -253,7 +274,7 @@ reports/
 - GitHub
 - Markdown
 
-## 十二、说明
+## 十三、说明
 
 - 本项目仅用于数字电路课程设计、学习交流和项目记录；
 - 仿真部分为 8 位多寄存器 CPU，实物部分为 4 位 ACC＋ALU，两者实现范围不同；
